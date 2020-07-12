@@ -33,4 +33,6 @@ development.  You can install all of this with:
 opam install num ocamlp5 ocamlfind utop
 ```
 
-in your command line.
+on your command line.
+
+The ```Makefile``` comments have more details on what is available.
