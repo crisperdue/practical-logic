@@ -28,11 +28,11 @@ MLFILES = initialization.ml lib.ml intro.ml \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
           tactics.ml limitations.ml
 
-# The default is an interactive session ready to run examples.
-# atp-top is a shell script that starts an OCaml top level with
-# appropriate initializations.
+# Run "ocaml" (or "utop") to get a command line.  Say:
+# #use "inittop.ml";;
+# to initialize the theorem proving example code.
 #
-atp-top: atp_batch.cmo printers.ml samples
+inittop.ml: atp_batch.cmo printers.ml samples
 	-true
 
 # A bytecode executable that runs examples from example.ml (only)
@@ -60,7 +60,7 @@ atp_batch.cmo: Quotexpander.cmo atp_batch.ml
 # the samples/ subdirectory.
 #
 samples: $(MLFILES)
-	for f in $(MLFILES); do echo ./mk-samples $$f; done
+	for f in $(MLFILES); do ./mk-samples $$f; done
 
 # A file to #use to install all printers from the MLFILES
 #
@@ -73,12 +73,8 @@ Quotexpander.cmo: Quotexpander.ml
 	$(OCC) -package camlp5 -c Quotexpander.ml
 
 
-# Concatenated MLFILES are here, with interactive examples removed,
-# but with printers installed.  To load into a top level.
-#
-atp_interactive.ml: $(MLFILES); ./Mk_ml_file $(MLFILES) >atp_interactive.ml
-
-# Like atp_interactive, but no printers installed.
+# Concatenated MLFILES are here, with interactive examples removed
+# and no printers installed.  To load into a top level.
 #
 atp_batch.ml: $(MLFILES)
 	./Mk_ml_file $(MLFILES) | grep -v install_printer >atp_batch.ml
@@ -90,5 +86,4 @@ clean:
 	  atp_batch.o atp_batch.ml \
 	  example example.exe example_opt example-opt.exe \
 	  example.cmi example.cmo example.cmx example.o \
-	  Quotexpander.cmo Quotexpander.cmi \
-	  atp_interactive.ml
+	  Quotexpander.cmo Quotexpander.cmi

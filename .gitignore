@@ -1,2 +1,4 @@
 *.cm*
+atp_batch.ml
 example
+samples/**

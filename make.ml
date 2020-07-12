@@ -4,12 +4,10 @@
 (* Copyright (c) 2003-2007, John Harrison. (See "LICENSE.txt" for details.)  *)
 (* ========================================================================= *)
 
-#load "nums.cma";;                                     (* For Ocaml 3.06     *)
+#load "nums.cma";;
 
-if let v = String.sub Sys.ocaml_version 0 4 in v >= "3.10"
-then (Topdirs.dir_directory "+camlp5";
-      Topdirs.dir_load Format.std_formatter "camlp5o.cma")
-else (Topdirs.dir_load Format.std_formatter "camlp4o.cma");;
+Topdirs.dir_directory "+camlp5";;
+Topdirs.dir_load Format.std_formatter "camlp5o.cma");;
 
 (* ------------------------------------------------------------------------- *)
 (* Dummy so we can just do #use.                                             *)
