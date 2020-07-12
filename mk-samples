@@ -1,0 +1,6 @@
+#!/bin/bash
+
+input=$1
+
+mkdir -p samples
+sed -n -e '/START_INTERACTIVE;;/,/END_INTERACTIVE/p' <$input >samples/x-$input
