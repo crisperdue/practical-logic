@@ -7,10 +7,30 @@ more recent versions of OCaml and OCaml tools, and some of the convenience funct
 has been extended.
 
 To set up OCaml for use with this repository, get a version of OCaml 4.x.  This has
-been tested with version 4.10.0, installed with OPAM using
+been tested with version 4.10.0, installed with OPAM in a Unix (Mac OS) environment using
 
-```sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)```
+```
+sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+```
 
-as described at https://opam.ocaml.org/doc/Install.html.
 
+as described at https://opam.ocaml.org/doc/Install.html, followed by
 
+```
+opam init
+eval (opam env)
+```
+
+I added the ```eval (opam env)``` line to ~/.bashrc to ensure that appropriate
+environment variables are set up in my bash shell.
+
+You will need opam packages "num" and "ocamlp5" to use this code.
+The build procedure in the Makefile uses the "ocamlfind" package,
+and many users find the "utop" package very helpful for interactive
+development.  You can install all of this with:
+
+```
+opam install num ocamlp5 ocamlfind utop
+```
+
+in your command line.
