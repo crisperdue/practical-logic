@@ -13,6 +13,8 @@ Sys.interactive := false;;
 #load "atp_batch.cmo";;
 #load "Quotexpander.cmo";;
 
+#directory "samples";;  
+
 open Atp_batch;;
 
 (* Allow lines containing START_INTERACTIVE. *)
