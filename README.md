@@ -4,6 +4,9 @@ John Harrison's wonderful book, "Handbook of Practical Logic and Automated Reaso
 comes with OCaml code implementing and demonstrating many of the ideas presented there.
 Unfortunately the web page and code distribution for them are considrably out of date.
 
+This repository was created to help people like myself, who are not very familiar with
+OCaml or its toolset, to use Harrison's sample code.
+
 The material here started with exactly the tar file referenced on Harrison's resource page
 https://www.cl.cam.ac.uk/~jrh13/atp/index.html.  It has been updated to work with much
 more recent versions of OCaml and OCaml tools, some of the supporting functionality
