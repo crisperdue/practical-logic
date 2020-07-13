@@ -17,7 +17,7 @@ OCCOPT = ocamlfind ocamlopt -w -3
 # Most of the source files.  The non-interactive parts of
 # these files get concatenated into atp_interactive.ml.
 #
-MLFILES = initialization.ml lib.ml intro.ml \
+MLFILES = initialization.ml lib.ml \
           formulas.ml prop.ml propexamples.ml           \
           defcnf.ml dp.ml stal.ml bdd.ml fol.ml skolem.ml               \
           herbrand.ml unif.ml tableaux.ml resolution.ml prolog.ml       \
@@ -27,6 +27,8 @@ MLFILES = initialization.ml lib.ml intro.ml \
           complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
           tactics.ml limitations.ml
+
+# intro.ml stands on its own:  Simply #use "intro.ml;;" on the command line.
 
 # Run "ocaml" (or "utop") to get a command line.  Say:
 # #use "inittop.ml";;
