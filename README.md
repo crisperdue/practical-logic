@@ -10,9 +10,10 @@ OCaml or its toolset, to use Harrison's sample code with recent versionss of OCa
 and tools.
 
 The material here started with exactly the tar file referenced on Harrison's resource page
-https://www.cl.cam.ac.uk/~jrh13/atp/index.html.  It has been updated to work with much
+https://www.cl.cam.ac.uk/~jrh13/atp/index.html.  It has been updated slightly to work with much
 more recent versions of OCaml and OCaml tools, some of the supporting functionality
-has been extended, and minor errors have been corrected.
+has been extended, and minor errors have been corrected.  The instructions here for
+installing and setting up OCaml and tools are new.
 
 To set up OCaml for use with this repository, get a version of OCaml 4.x.  This has
 been tested with version 4.10.0, installed with OPAM in a Unix (Mac OS) environment using
