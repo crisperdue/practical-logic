@@ -43,4 +43,10 @@ as your first interactive command.
 Alternatively you can invoke the OCaml command line by running ```utop```, which
 has "topfind" preloaded along with numerous convenience features for interactive use.
 
+Running the "make" command as ```make inittop.ml``` or equivalently just ```make```,
+will set up some useful components.  With this done, you can give the command
+```#use "inittop.ml";;``` at the OCaml command line to load in all but the interactive
+examples in Harrison's code.  Those become available in the "samples" subdirectory,
+and you can run any one of them with ```#use "x-<name>.ml";;```.
+
 The ```Makefile``` comments have more details on what is available.
