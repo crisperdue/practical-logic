@@ -8,6 +8,9 @@
 # many.ml        (Example relevant to many-sorted logic)
 # hol.ml         (Simple higher order logic setup)
 
+# In your shell, give the command "make" in this directory
+# to set things up to run example code.
+
 # Compiler commands.
 # Compile without deprecation warnings (-w -3).
 #
@@ -17,7 +20,7 @@ OCCOPT = ocamlfind ocamlopt -w -3
 # Most of the source files.  The non-interactive parts of
 # these files get concatenated into atp_interactive.ml.
 #
-MLFILES = initialization.ml lib.ml \
+MLFILES = initialization.ml lib.ml intro.ml \
           formulas.ml prop.ml propexamples.ml           \
           defcnf.ml dp.ml stal.ml bdd.ml fol.ml skolem.ml               \
           herbrand.ml unif.ml tableaux.ml resolution.ml prolog.ml       \
@@ -28,12 +31,15 @@ MLFILES = initialization.ml lib.ml \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
           tactics.ml limitations.ml
 
-# intro.ml stands on its own:  Simply #use "intro.ml;;" on the command line.
-
-# Run "ocaml" (or "utop") to get a command line.  Say:
-# #use "inittop.ml";;
-# to initialize the theorem proving example code.
+# This is the default target, and sets up everything
+# needed to run examples.  Except as noted above, to
+# run a file of examples enter at the OCaml command prompt:
 #
+# #use "x-<name>.ml";;
+#
+# The examples in intro.ml and prop.ml rely on names
+# that are shadowed in later files.
+
 inittop.ml: atp_batch.cmo printers.ml samples
 	-true
 
