@@ -1,4 +1,4 @@
-# jrh-atp
+# Code from John Harrison's book
 
 John Harrison's excellent "Handbook of Practical Logic and Automated Reasoning",
 comes with OCaml code implementing and demonstrating many of the ideas presented there.
