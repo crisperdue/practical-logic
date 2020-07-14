@@ -47,8 +47,12 @@ alternatively ```utop```, which has numerous conveniences for interactive use.
 Running the system "make" command as ```make inittop.ml``` or equivalently just ```make```,
 will set up everything you need to run most of the sample files.
 
-Those become available in the "samples" subdirectory,
-and you can run a file of examples with ```#use "x-<name>.ml";;```.
+Those examples become available in the "samples" subdirectory,
+and you can run any file of examples with 
+
+```
+#use "x-<name>.ml";;
+```
 
 The files intro.ml and prop.ml are a little different.  To run one of these enter:
 
