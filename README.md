@@ -1,6 +1,6 @@
 # jrh-atp
 
-John Harrison's wonderful "Handbook of Practical Logic and Automated Reasoning",
+John Harrison's excellent "Handbook of Practical Logic and Automated Reasoning",
 comes with OCaml code implementing and demonstrating many of the ideas presented there.
 Unfortunately the web page and code distribution for them are considerably behind the
 current OCaml language and tooling.
@@ -41,18 +41,26 @@ development.  You can install all of this with:
 opam install num ocamlp5 ocamlfind utop
 ```
 
-on your command line.
-
-If you run ```ocaml``` directly, you may want to give the command ```#use "topfind";;```
-as your first interactive command.
-
-Alternatively you can invoke the OCaml command line by running ```utop```, which
-has "topfind" preloaded along with numerous convenience features for interactive use.
+After this you can invoke the OCaml command line by running ```ocaml``` or
+alternatively ```utop```, which has numerous conveniences for interactive use.
 
 Running the system "make" command as ```make inittop.ml``` or equivalently just ```make```,
-will set up some useful components.  With this done, you can give the command
-```#use "inittop.ml";;``` at the OCaml command line to load in all but the interactive
-examples in Harrison's code.  Those become available in the "samples" subdirectory,
-and you can run any one of them with ```#use "x-<name>.ml";;```.
+will set up everything you need to run most of the sample files.
+
+Those become available in the "samples" subdirectory,
+and you can run a file of examples with ```#use "x-<name>.ml";;```.
+
+The files intro.ml and prop.ml are a little different.  To run one of these enter:
+
+```
+#use "intro.ml";;
+```
+or
+```
+#use "prop.ml";;
+```
+
+on your OCaml command line.  In this case rerun OCaml before attempting to run other samples.
+
 
 The ```Makefile``` comments have more details on what is available.
