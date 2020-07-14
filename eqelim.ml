@@ -119,6 +119,8 @@ let bmeson fm =
 (* ------------------------------------------------------------------------- *)
 
 START_INTERACTIVE;;
+let emeson fm = meson (equalitize fm);;
+
 time bmeson
  <<(exists x. x = f(g(x)) /\ forall x'. x' = f(g(x')) ==> x = x') <=>          
    (exists y. y = g(f(y)) /\ forall y'. y' = g(f(y')) ==> y = y')>>;;          
@@ -139,8 +141,6 @@ END_INTERACTIVE;;
 (* ------------------------------------------------------------------------- *)
 
 START_INTERACTIVE;;
-let emeson fm = meson (equalitize fm);;
-
 let ewd =
  <<(forall x. f(x) ==> g(x)) /\
    (exists x. f(x)) /\
