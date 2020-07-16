@@ -134,7 +134,6 @@ let deepen f n =
     try print_string "Searching with depth limit ";
       print_int n;
       flush stdout;
-      Unix.sleep 1;
       f n
     with Failure _ ->
       print_string("\r");
