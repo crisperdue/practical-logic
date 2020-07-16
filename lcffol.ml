@@ -216,6 +216,9 @@ let deskolcont thp (env,sks,k) =
 let lcffol fm =
   let fvs = fv fm in
   let fm' = Imp(itlist mk_forall fvs fm,False) in
+  print_string "Proving ";
+  print_fol_formula fm;
+  print_newline ();
   let th1 = deepen (fun n -> lcfrefute fm' n deskolcont) 0 in
   let th2 = modusponens (axiom_doubleneg (negatef fm')) th1 in
   itlist (fun v -> spec(Var v)) (rev fvs) th2;;

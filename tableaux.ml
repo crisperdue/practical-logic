@@ -129,10 +129,20 @@ let rec tableau (fms,lits,n) cont (env,k) =
       try tryfind (fun l -> cont(unify_complements env (fm,l),k)) lits
       with Failure _ -> tableau (unexp,fm::lits,n) cont (env,k);;
 
-let rec deepen f n =
-  try print_string "Searching with depth limit ";
-      print_int n; print_newline(); f n
-  with Failure _ -> deepen f (n + 1);;
+let deepen f n =
+  let rec deepen1 f n =
+    try print_string "Searching with depth limit ";
+      print_int n;
+      flush stdout;
+      Unix.sleep 1;
+      f n
+    with Failure _ ->
+      print_string("\r");
+      flush stdout;
+      deepen1 f (n + 1) in
+  let v = deepen1 f n in
+  print_newline();
+  v;;
 
 let tabrefute fms =
   deepen (fun n -> tableau (fms,[],n) (fun x -> x) (undefined,0); n) 0;;
