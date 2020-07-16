@@ -293,7 +293,9 @@ let consider (x,p) = exists_elim_tac "" (Exists(x,p));;
 
 let take = exists_intro_tac;;
 
-let cases = disj_elim_tac "";;
+(* The compiler whines and stops if there are no uses of this, *)
+(* so we define it near to its usage. *)
+(* let cases = disj_elim_tac "";; *)
 
 (* ------------------------------------------------------------------------- *)
 (* Thesis modification.                                                      *)
@@ -328,6 +330,10 @@ let qed (Goals((asl,w)::gls,jfn) as gl) =
 (* ------------------------------------------------------------------------- *)
 
 START_INTERACTIVE;;
+
+(* Define here just in time for (interactive) use. See above. *)
+let cases = disj_elim_tac "";;
+
 let ewd954 = prove
  <<(forall x y. x <= y <=> x * y = x) /\
    (forall x y. f(x * y) = f(x) * f(y))

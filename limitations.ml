@@ -2,6 +2,11 @@
 (* Goedel's theorem and relatives.                                           *)
 (* ========================================================================= *)
 
+open Num;;
+
+(* This is a tactic, moved here so the compiler can succeed. *)
+let cases = disj_elim_tac "";;
+
 (* ------------------------------------------------------------------------- *)
 (* Produce numeral in zero-successor form.                                   *)
 (* ------------------------------------------------------------------------- *)

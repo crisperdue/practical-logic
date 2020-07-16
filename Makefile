@@ -29,16 +29,29 @@ MLFILES = initialization.ml lib.ml intro.ml \
           paramodulation.ml decidable.ml qelim.ml cooper.ml             \
           complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
-          tactics.ml limitations.ml
+          tactics.ml
 
-# This is the default target, and sets up everything
-# needed to run examples.  Except as noted above, to
-# run a file of examples enter at the OCaml command prompt:
+# This is the default target, and sets up everything needed to run
+# examples.  To run a file of examples enter at the OCaml command
+# prompt:
 #
 # #use "x-<name>.ml";;
 #
-# The examples in intro.ml and prop.ml rely on names
-# that are shadowed in later files.
+# For files intro.ml, prop.ml, and limitations.ml, simply do:
+#
+# #use "<name>.ml";;
+#
+# directly, e.g. #use "intro.mml";;
+#
+TOSAMPLE = formulas.ml propexamples.ml                                  \
+          defcnf.ml dp.ml stal.ml bdd.ml fol.ml skolem.ml               \
+          herbrand.ml unif.ml tableaux.ml resolution.ml prolog.ml       \
+          meson.ml skolems.ml equal.ml cong.ml rewrite.ml               \
+          order.ml completion.ml eqelim.ml                              \
+          paramodulation.ml decidable.ml qelim.ml cooper.ml             \
+          complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
+          combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
+          tactics.ml
 
 inittop.ml: atp_batch.cmo printers.ml samples
 	-true
@@ -73,7 +86,7 @@ samples: $(MLFILES)
 # A file to #use to install all printers from the MLFILES
 #
 printers.ml: $(MLFILES)
-	grep '#install_printer' $(MLFILES) >printers.ml
+	grep -h '#install_printer' $(MLFILES) >printers.ml
 
 # The camlp5 quotation expander
 #
