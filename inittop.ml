@@ -15,9 +15,11 @@ Sys.interactive := false;;
 
 open Atp_batch;;
 
+
 (* Allow lines containing START_INTERACTIVE. *)
 type dummy_interactive = START_INTERACTIVE | END_INTERACTIVE;;
 
+#use "printers.ml";;
 #directory "samples";;  
 
 Sys.interactive := true;;

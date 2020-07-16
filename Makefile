@@ -53,8 +53,9 @@ TOSAMPLE = formulas.ml propexamples.ml                                  \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
           tactics.ml
 
-inittop.ml: atp_batch.cmo printers.ml samples
-	-true
+.PHONY: TOP
+TOP: atp_batch.cmo printers.ml samples
+
 
 # A bytecode executable that runs examples from example.ml (only)
 #
@@ -80,8 +81,8 @@ atp_batch.cmo: Quotexpander.cmo atp_batch.ml
 # Files of just interactive examples from MLFILES, all in
 # the samples/ subdirectory.
 #
-samples: $(MLFILES)
-	for f in $(MLFILES); do ./mk-samples $$f; done
+samples: $(TOSOAMPLE)
+	for f in $(TOSAMPLE); do ./mk-samples $$f; done
 
 # A file to #use to install all printers from the MLFILES
 #
@@ -92,7 +93,6 @@ printers.ml: $(MLFILES)
 #
 Quotexpander.cmo: Quotexpander.ml
 	$(OCC) -package camlp5 -c Quotexpander.ml
-
 
 # Concatenated MLFILES are here, with interactive examples removed
 # and no printers installed.  To load into a top level.
@@ -108,3 +108,4 @@ clean:
 	  example example.exe example_opt example-opt.exe \
 	  example.cmi example.cmo example.cmx example.o \
 	  Quotexpander.cmo Quotexpander.cmi
+	-rm -rf samples
