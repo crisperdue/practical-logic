@@ -1,6 +1,6 @@
 # Code from John Harrison's book
 
-John Harrison's excellent "Handbook of Practical Logic and Automated Reasoning",
+John Harrison's remarkable "Handbook of Practical Logic and Automated Reasoning",
 comes with OCaml code implementing and demonstrating many of the ideas presented there.
 Unfortunately the web page and code distribution for them are considerably behind the
 current OCaml language and tooling.
