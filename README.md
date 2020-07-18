@@ -54,7 +54,7 @@ and you can run any file of examples with
 #use "x-<name>.ml";;
 ```
 
-The files intro.ml and prop.ml are a little different.  To run one of these enter:
+The files intro.ml, prop.ml, and limitations.ml are a little different.  To run one of these enter:
 
 ```
 #use "intro.ml";;
@@ -63,8 +63,12 @@ or
 ```
 #use "prop.ml";;
 ```
+or
+```
+#use "limitations.ml";;
+```
 
-on your OCaml command line.  In this case rerun OCaml before attempting to run other samples.
+on your OCaml command line.  In this case restart OCaml before attempting to run other samples.
 
 
 The ```Makefile``` comments have more details on what is available.
