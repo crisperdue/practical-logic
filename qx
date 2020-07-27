@@ -1,0 +1,8 @@
+#!/bin/bash
+
+file="$1"
+temp=$(mktemp -t qx)
+
+
+python3 qx.py <"$file" >"$temp" && cp "$temp" "$file" && rm -f "$temp" ||
+  "${EDITOR:-vi}" "$file"
