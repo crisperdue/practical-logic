@@ -1,3 +1,5 @@
+.ocamlinit
+utop-prefs.ml
 *.cm*
 atp_batch.ml
 printers.ml
