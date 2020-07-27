@@ -70,5 +70,8 @@ or
 
 on your OCaml command line.  In this case restart OCaml before attempting to run other samples.
 
-
 The ```Makefile``` comments have more details on what is available.
+
+You can customize the OCaml top level further by modifying ```.ocamlinit```, or provide UTop-specific
+customizations in ```utop-prefs.ml```.
+
