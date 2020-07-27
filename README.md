@@ -1,6 +1,6 @@
 # Code from John Harrison's book
 
-John Harrison's remarkable "Handbook of Practical Logic and Automated Reasoning",
+John Harrison's remarkable book, "Handbook of Practical Logic and Automated Reasoning",
 comes with OCaml code implementing and demonstrating many of the ideas presented there.
 Unfortunately the web page and code distribution for them are considerably behind the
 current OCaml language and tooling.
@@ -14,6 +14,8 @@ https://www.cl.cam.ac.uk/~jrh13/atp/index.html.  It has been updated slightly to
 more recent versions of OCaml and OCaml tools, some of the supporting functionality
 has been extended, and minor errors have been corrected.  The instructions here for
 installing and setting up OCaml and tools are new.
+
+## Installation
 
 To set up OCaml for use with this repository, get a version of OCaml 4.x.  This has
 been tested with version 4.10.0, installed with OPAM in a Unix (Mac OS) environment using
@@ -40,6 +42,8 @@ development.  You can install all of this with:
 ```
 opam install num ocamlp5 ocamlfind utop
 ```
+
+## Using the code
 
 After this you can invoke the OCaml command line by running ```ocaml``` or
 alternatively ```utop```, which has numerous conveniences for interactive use.
@@ -71,6 +75,8 @@ or
 on your OCaml command line.  In this case restart OCaml before attempting to run other samples.
 
 The ```Makefile``` comments have more details on what is available.
+
+## Customization
 
 You can customize the OCaml top level further by modifying ```.ocamlinit```, or provide UTop-specific
 customizations in ```utop-prefs.ml```.
