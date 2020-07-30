@@ -20,11 +20,21 @@ def fixup(match):
   # Multi-line matching, so $(?s).
   is_term = re.match(r'(?s)^\|(.*)\|$', text)
   if is_term: text = text[1:-1]
-  escaped = ' "' + re.sub(r'\\', r'\\\\', text) + '"' 
-  func = 'parse_term' if is_term else 'parse_fml'
+  escaped = escape_ocaml_string(unescape_content(text))
+  func = 'parse_term ' if is_term else 'parse_fml '
   return '(' + func + escaped + ')'
 
+# Removes escape sequences from the given quotation content.
+def unescape_content(text):
+  return re.sub(r'\\([\\<>])', r'\1', text)
+
+# Escapes double quote and backslash.  Probably some others
+# should be escaped, too.
+def escape_ocaml_string(str):
+  return '"' + re.sub(r'([\\"])', r'\\\1', str) + '"'
+
 # Applies "fixup" to all camlp5 quotations in the given string.
+# Handles the form << text >>, but not <id:< text >>.
 def fixup_quotations(ss):
   # Multi-line matching, so $(?s).
   # Quotation ends at ">>" unless preceded by a single
