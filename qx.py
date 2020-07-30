@@ -27,7 +27,9 @@ def fixup(match):
 # Applies "fixup" to all camlp5 quotations in the given string.
 def fixup_quotations(ss):
   # Multi-line matching, so $(?s).
-  return re.sub(r'(?s)<<(.*)(?<![^\\]\\)>>', fixup, ss)
+  # Quotation ends at ">>" unless preceded by a single
+  # backslash.
+  return re.sub(r'(?s)<<(.*?)(?<![^\\]\\)>>', fixup, ss)
 
 text = sys.stdin.read()
 print(fixup_quotations(text))
