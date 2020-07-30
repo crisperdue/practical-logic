@@ -6,7 +6,7 @@ Unfortunately the web page and code distribution for them are considerably behin
 current OCaml language and tooling.
 
 This repository was created to help people like myself, who are not very familiar with
-OCaml or its toolset, to use Harrison's sample code with recent versionss of OCaml
+OCaml or its toolset, to use Harrison's sample code with recent versions of OCaml
 and tools.
 
 The material here started with exactly the tar file referenced on Harrison's resource page
