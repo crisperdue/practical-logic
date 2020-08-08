@@ -8,7 +8,7 @@ Gc.set { (Gc.get()) with Gc.stack_limit = 16777216 };; (* Up the stack size  *)
 Format.set_margin 72;;                                 (* Reduce margins     *)
 open Format;;                                       (* Open formatting    *)
 open Num;;                                          (* Open bignums       *)
-
+open Str;;                                          (* Open extra strings *)
 
 let print_num n = print_string(string_of_num n);;      (* Avoid range limit  *)
 

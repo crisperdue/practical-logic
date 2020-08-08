@@ -29,7 +29,7 @@ MLFILES = initialization.ml lib.ml intro.ml \
           paramodulation.ml decidable.ml qelim.ml cooper.ml             \
           complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
-          tactics.ml
+          tactics.ml print-fpf.ml
 
 # This is the default target, and sets up everything needed to run
 # examples.  To run a file of examples enter at the OCaml command
@@ -43,16 +43,6 @@ MLFILES = initialization.ml lib.ml intro.ml \
 #
 # directly, e.g. #use "intro.mml";;
 #
-TOSAMPLE = formulas.ml propexamples.ml                                  \
-          defcnf.ml dp.ml stal.ml bdd.ml fol.ml skolem.ml               \
-          herbrand.ml unif.ml tableaux.ml resolution.ml prolog.ml       \
-          meson.ml skolems.ml equal.ml cong.ml rewrite.ml               \
-          order.ml completion.ml eqelim.ml                              \
-          paramodulation.ml decidable.ml qelim.ml cooper.ml             \
-          complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
-          combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
-          tactics.ml
-
 .PHONY: TOP
 TOP: atp_batch.cmo printers.ml samples
 
@@ -77,6 +67,16 @@ atp_batch.cmx: Quotexpander.cmo atp_batch.ml
 
 atp_batch.cmo: Quotexpander.cmo atp_batch.ml
 	$(OCC) -pp "camlp5o ./Quotexpander.cmo" -w ax -c atp_batch.ml
+
+TOSAMPLE = formulas.ml propexamples.ml                                  \
+          defcnf.ml dp.ml stal.ml bdd.ml fol.ml skolem.ml               \
+          herbrand.ml unif.ml tableaux.ml resolution.ml prolog.ml       \
+          meson.ml skolems.ml equal.ml cong.ml rewrite.ml               \
+          order.ml completion.ml eqelim.ml                              \
+          paramodulation.ml decidable.ml qelim.ml cooper.ml             \
+          complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
+          combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
+          tactics.ml print-fpf.ml
 
 # Files of just interactive examples from MLFILES, all in
 # the samples/ subdirectory.

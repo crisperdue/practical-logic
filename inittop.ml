@@ -8,6 +8,7 @@ Sys.interactive := false;;
 
 #use "topfind";;
 #require "num";;
+#require "str";;
 #require "camlp5";;
 #load "camlp5o.cma";;
 #load "Quotexpander.cmo";;
