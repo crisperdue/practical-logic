@@ -1,4 +1,11 @@
+#!/bin/bash
+#
+# Prep OCaml code to be compiled, removing directives
+# and commenting out interactive examples.
+
 echo "open Num;;"
 echo "open Format;;"
 
-cat $@ | sed 's/START_INTERACTIVE;;/(\*/' | sed 's/END_INTERACTIVE;;/\*)/'
+cat $@ | sed -e 's/START_INTERACTIVE;;/(\*/' \
+             -e 's/END_INTERACTIVE;;/\*)/'   \
+	     -e '/#install_printer/d'

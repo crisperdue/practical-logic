@@ -76,7 +76,7 @@ TOSAMPLE = formulas.ml propexamples.ml                                  \
           paramodulation.ml decidable.ml qelim.ml cooper.ml             \
           complex.ml real.ml grobner.ml geom.ml interpolation.ml        \
           combining.ml lcf.ml lcfprop.ml folderived.ml lcffol.ml        \
-          tactics.ml print-fpf.ml
+          tactics.ml
 
 # Files of just interactive examples from MLFILES, all in
 # the samples/ subdirectory.
@@ -98,7 +98,7 @@ Quotexpander.cmo: Quotexpander.ml
 # and no printers installed.  To load into a top level.
 #
 atp_batch.ml: $(MLFILES)
-	./Mk_ml_file $(MLFILES) | grep -v install_printer >atp_batch.ml
+	./Mk_ml_file $(MLFILES) >atp_batch.ml
 
 # Clean up
 #
