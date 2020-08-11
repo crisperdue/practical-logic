@@ -1,29 +1,10 @@
 (* ========================================================================= *)
-(* Initialize theorem proving example code.                                  *)
+(* Setup and utilities for setting up interactive top level                  *)
 (*                                                                           *)
-(* Copyright (c) 2003-2007, John Harrison. (See "LICENSE.txt" for details.)  *)
 (* ========================================================================= *)
-
-Sys.interactive := false;;
-
-#use "topfind";;
-#require "num";;
-#require "str";;
-#require "camlp5";;
-#load "camlp5o.cma";;
-#load "Quotexpander.cmo";;
-
-#load "atp_batch.cmo";;
-open Atp_batch;;
-
-let parse_fml = default_parser;;
-let parse_term = secondary_parser;;
 
 (* Allow lines containing START_INTERACTIVE. *)
 type dummy_interactive = START_INTERACTIVE | END_INTERACTIVE;;
-
-#use "printers.ml";;
-#directory "samples";;  
 
 (* Runs the action of a directive with no arguments *)
 let run_directive name =
@@ -48,6 +29,6 @@ let eval code =
 
 if Findlib.is_recorded_package "utop" then
   if Sys.file_exists "utop-prefs.ml" then
-    directive_use "utop-prefs.ml";
+    directive_use "utop-prefs.ml";;
 
-Sys.interactive := true;;
+#directory "samples";;  
