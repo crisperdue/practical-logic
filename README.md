@@ -43,10 +43,13 @@ development.  You can install all of this with:
 opam install num ocamlp5 ocamlfind utop
 ```
 
-## Using the code
+## Using Harrison's code
 
-After this you can invoke the OCaml command line by running ```ocaml``` or
-alternatively ```utop```, which has numerous conveniences for interactive use.
+After the setup is done you can invoke the OCaml command line by running ```ocaml``` or
+```utop``` in the top directory of the repo.  
+Utop provides an OCaml toplevel with many additional conveniences for interactive use
+compared with plain ocaml.
+In the top directory is a .ocamlinit file that loads most of Harrison's code.
 
 Running the system "make" command as ```make inittop.ml``` or equivalently just ```make```,
 will set up everything you need to run most of the sample files.
