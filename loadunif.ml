@@ -22,9 +22,18 @@ type dummy_interactive = START_INTERACTIVE | END_INTERACTIVE;;
 #use "formulas.ml";;
 #use "prop.ml";;             (* Basic propositional logic stuff              *)
 #use "fol.ml";;
+#use "unif.ml";;
 
 let parse_fml = default_parser;;
 let parse_term = secondary_parser;;
+
+(* Quick and dirty printer for alists, e.g. results of fullunify. *)
+let uprint a =
+  List.iter (fun (name, term) ->
+    print_string name;
+    print_string ": ";
+    print_term 0 term;
+    print_newline()) a;;
 
 #use "inittop.ml";;
 
