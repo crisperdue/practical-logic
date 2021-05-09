@@ -84,3 +84,14 @@ The ```Makefile``` comments have more details on what is available.
 You can customize the OCaml top level further by modifying ```.ocamlinit```, or provide UTop-specific
 customizations in ```utop-prefs.ml```, both in the repository top level directory.
 
+## Using alists as finite partial functions
+
+In the "alist" branch there are additional files alist.ml and
+loadunif.ml.  Alist.ml overrides the implementation of finite partial
+functions with one based on alists; and loadunif.ml loads enough
+code to do unification using alists.  Some of Harrison's code
+requires the full implementation rather than alists, so beware.
+
+To start ocaml (or utop) with this initialization, use a command line
+with "-init loadunif.ml".
+
