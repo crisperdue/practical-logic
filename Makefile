@@ -18,7 +18,7 @@ OCC = ocamlfind ocamlc -w -3
 OCCOPT = ocamlfind ocamlopt -w -3
 
 # Most of the source files.  The non-interactive parts of
-# these files get concatenated into atp_interactive.ml.
+# these files get concatenated into atp_batch.ml.
 #
 MLFILES = initialization.ml lib.ml intro.ml \
           formulas.ml prop.ml propexamples.ml           \
